@@ -1,0 +1,203 @@
+{
+  "buildingId": "BLD_001",
+  "buildingName": "BuildSphere Innovation Tower",
+  "location": "Main Tech Campus, Zone A",
+  "constructionStatus": "Operational",
+  "totalFloors": 3,
+  "floors": [
+    {
+      "floorId": "FL_01",
+      "buildingId": "BLD_001",
+      "floorNumber": 1,
+      "floorName": "Ground Level - Engineering & Labs",
+      "elevation": 0.0,
+      "rooms": [
+        {
+          "roomId": "ROOM_101",
+          "floorId": "FL_01",
+          "name": "Robotics & Automation Lab",
+          "category": "Laboratory",
+          "area": 55.0,
+          "occupancy": 8,
+          "capacity": 15,
+          "temperature": 22.5,
+          "energyConsumption": 5.4,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_102",
+          "floorId": "FL_01",
+          "name": "Materials Science Testing Bay",
+          "category": "Laboratory",
+          "area": 48.0,
+          "occupancy": 4,
+          "capacity": 12,
+          "temperature": 21.8,
+          "energyConsumption": 6.8,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_103",
+          "floorId": "FL_01",
+          "name": "Main Electrical & Switchgear Room",
+          "category": "Storage",
+          "area": 35.0,
+          "occupancy": 1,
+          "capacity": 4,
+          "temperature": 24.2,
+          "energyConsumption": 9.1,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_104",
+          "floorId": "FL_01",
+          "name": "Rapid Prototyping Workshop",
+          "category": "Office",
+          "area": 52.0,
+          "occupancy": 6,
+          "capacity": 14,
+          "temperature": 22.0,
+          "energyConsumption": 4.5,
+          "status": "Normal",
+          "activeAlertIds": []
+        }
+      ]
+    },
+    {
+      "floorId": "FL_02",
+      "buildingId": "BLD_001",
+      "floorNumber": 2,
+      "floorName": "Level 2 - Software & Design Suites",
+      "elevation": 4.0,
+      "rooms": [
+        {
+          "roomId": "ROOM_201",
+          "floorId": "FL_02",
+          "name": "AI Systems & BIM Dev Studio",
+          "category": "Office",
+          "area": 60.0,
+          "occupancy": 14,
+          "capacity": 20,
+          "temperature": 23.0,
+          "energyConsumption": 4.2,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_202",
+          "floorId": "FL_02",
+          "name": "Collaborative Design Space",
+          "category": "MeetingRoom",
+          "area": 42.0,
+          "occupancy": 10,
+          "capacity": 16,
+          "temperature": 22.6,
+          "energyConsumption": 3.8,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_203",
+          "floorId": "FL_02",
+          "name": "Cloud Server & Networking Suite",
+          "category": "ServerRoom",
+          "area": 45.0,
+          "occupancy": 12,
+          "capacity": 18,
+          "temperature": 25.0,
+          "energyConsumption": 4.8,
+          "status": "Warning",
+          "activeAlertIds": ["ALT_001"]
+        },
+        {
+          "roomId": "ROOM_204",
+          "floorId": "FL_02",
+          "name": "Executive Boardroom Alpha",
+          "category": "ExecutiveSuite",
+          "area": 50.0,
+          "occupancy": 6,
+          "capacity": 18,
+          "temperature": 21.5,
+          "energyConsumption": 2.9,
+          "status": "Normal",
+          "activeAlertIds": []
+        }
+      ]
+    },
+    {
+      "floorId": "FL_03",
+      "buildingId": "BLD_001",
+      "floorNumber": 3,
+      "floorName": "Level 3 - Operations & Control Center",
+      "elevation": 8.0,
+      "rooms": [
+        {
+          "roomId": "ROOM_301",
+          "floorId": "FL_03",
+          "name": "Mission Operations & Security Hub",
+          "category": "Office",
+          "area": 58.0,
+          "occupancy": 9,
+          "capacity": 16,
+          "temperature": 22.2,
+          "energyConsumption": 5.1,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_302",
+          "floorId": "FL_03",
+          "name": "Executive Briefing Center",
+          "category": "ExecutiveSuite",
+          "area": 45.0,
+          "occupancy": 5,
+          "capacity": 15,
+          "temperature": 21.9,
+          "energyConsumption": 3.2,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_303",
+          "floorId": "FL_03",
+          "name": "Network Operations Center (NOC)",
+          "category": "ServerRoom",
+          "area": 40.0,
+          "occupancy": 4,
+          "capacity": 8,
+          "temperature": 20.5,
+          "energyConsumption": 7.6,
+          "status": "Normal",
+          "activeAlertIds": []
+        },
+        {
+          "roomId": "ROOM_304",
+          "floorId": "FL_03",
+          "name": "Project Strategy Room",
+          "category": "MeetingRoom",
+          "area": 46.0,
+          "occupancy": 7,
+          "capacity": 14,
+          "temperature": 22.8,
+          "energyConsumption": 3.6,
+          "status": "Normal",
+          "activeAlertIds": []
+        }
+      ]
+    }
+  ],
+  "activeAlerts": [
+    {
+      "alertId": "ALT_001",
+      "targetId": "ROOM_203",
+      "targetType": "Room",
+      "severity": "Warning",
+      "message": "Server Suite temperature exceeded baseline (25.0°C)",
+      "timestamp": "2026-08-28T09:00:00Z",
+      "isAcknowledged": false
+    }
+  ]
+}

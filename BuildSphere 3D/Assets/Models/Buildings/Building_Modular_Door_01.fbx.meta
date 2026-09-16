@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7bf00084547e315ed7e70bc7f57a52d1
+ModelImporter:
+  serializedVersion: 22000
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  meshOptimizationFlags: -1
+  globalScale: 1
+  useFileScale: 1
+  meshCompression: 0
+  importBlendShapes: 0
+  bakeAxisConversion: 1
+  generateSecondaryUV: 0

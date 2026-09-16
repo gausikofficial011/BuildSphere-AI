@@ -1,0 +1,42 @@
+{
+  "Uuid": "graph-1234",
+  "View": {
+    "Dynamo": {
+      "Version": "2.13.0.0"
+    }
+  },
+  "Nodes": [
+    {
+      "Id": "node-1",
+      "NodeType": "InputNode",
+      "Name": "Select Model Element",
+      "Category": "Revit.Selection",
+      "Inputs": [],
+      "Outputs": [{"Name": "Element"}]
+    },
+    {
+      "Id": "node-2",
+      "NodeType": "PythonScriptNode",
+      "Name": "Python Script",
+      "Inputs": [{"Name": "IN[0]"}],
+      "Outputs": [{"Name": "OUT"}]
+    },
+    {
+      "Id": "node-3",
+      "NodeType": "CustomNode",
+      "Name": "Clockwork.Door.GetHost",
+      "Inputs": [{"Name": "door"}],
+      "Outputs": [{"Name": "wall"}]
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "node-1",
+      "End": "node-2"
+    },
+    {
+      "Start": "node-2",
+      "End": "node-3"
+    }
+  ]
+}

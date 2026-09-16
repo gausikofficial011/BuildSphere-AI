@@ -1,0 +1,205 @@
+.global-profile-menu {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  animation: slideInDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInDown {
+  0% { opacity: 0; transform: translate(-100%, -10px); }
+  100% { opacity: 1; transform: translate(-100%, 0); }
+}
+
+.profile-menu-header {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-menu-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile-menu-item {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.profile-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.profile-menu-item.danger {
+  color: #ef4444;
+}
+
+.profile-menu-item.danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+.profile-menu-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.25rem 0;
+}
+
+/* Delete Modal Styles */
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.delete-account-modal {
+  background: #0f172a;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255,255,255,0.05);
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.modal-icon-container {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.delete-account-modal h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.delete-account-modal p {
+  margin: 0 0 2rem 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 0.875rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-delete {
+  flex: 1;
+  padding: 0.875rem;
+  background: #ef4444;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* Make all profile elements across the app look clickable */
+.user-profile, .pm-user, .org-user, .superadmin-user, [class*="-user"], .header-right > div:last-child {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.user-profile:hover, .pm-user:hover, .org-user:hover, .superadmin-user:hover, [class*="-user"]:hover, .header-right > div:last-child:hover {
+  opacity: 0.8;
+}

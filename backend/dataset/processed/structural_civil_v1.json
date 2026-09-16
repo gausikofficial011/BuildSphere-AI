@@ -1,0 +1,81 @@
+{
+  "dataset_id": "structural_civil_v1",
+  "name": "Structural & Civil Engineering Dataset",
+  "discipline": "Structural & Civil",
+  "portal_role": "StructuralEngineer",
+  "building_type": "Reinforced Concrete Frame",
+  "description": "Structural members, load bearing capacities, rebar cover, and concrete grade specifications.",
+  "version": "v1.1",
+  "source": "ETABS / STAAD Pro / IS 456 Analysis",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "COL_STR_C1",
+      "category": "Structural Columns",
+      "family": "Rectangular Concrete Column",
+      "type": "600x600mm M40 Fe500D",
+      "level": "Level 1",
+      "discipline": "Structural",
+      "geometry_features": {
+        "volume": 1.44,
+        "area": 9.6,
+        "location": [0, 0, 0]
+      },
+      "parameters": {
+        "Width": 0.6,
+        "Depth": 0.6,
+        "Height": 4.0,
+        "ConcreteGrade": "M40",
+        "RebarGrade": "Fe500D",
+        "AxialCapacity": "4850 kN",
+        "ClearCover": "40 mm"
+      }
+    },
+    {
+      "element_id": "BEAM_STR_B101",
+      "category": "Structural Framing",
+      "family": "Concrete Rectangular Beam",
+      "type": "300x600mm M35",
+      "level": "Level 1",
+      "discipline": "Structural",
+      "geometry_features": {
+        "volume": 1.08,
+        "area": 9.0,
+        "location": { "start": [0, 0, 4000], "end": [6000, 0, 4000] }
+      },
+      "parameters": {
+        "Span": 6.0,
+        "Width": 0.3,
+        "Depth": 0.6,
+        "ConcreteGrade": "M35",
+        "MomentCapacity": "240 kNm",
+        "ShearStirrups": "8mm @ 150mm c/c"
+      }
+    },
+    {
+      "element_id": "FND_ISO_F1",
+      "category": "Structural Foundations",
+      "family": "Isolated Footing",
+      "type": "Pad Footing 2500x2500x750mm",
+      "level": "Foundation Level",
+      "discipline": "Civil",
+      "geometry_features": {
+        "volume": 4.68,
+        "area": 6.25,
+        "location": [0, 0, -2500]
+      },
+      "parameters": {
+        "Length": 2.5,
+        "Width": 2.5,
+        "Depth": 0.75,
+        "SafeBearingCapacity": "220 kN/m2",
+        "WaterTableDepth": "-4.5m"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "COL_STR_C1", "target": "FND_ISO_F1", "type": "SUPPORTED_BY" },
+    { "source": "BEAM_STR_B101", "target": "COL_STR_C1", "type": "CONNECTED_TO" }
+  ]
+}

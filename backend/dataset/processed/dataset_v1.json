@@ -1,0 +1,90 @@
+{
+  "project_id": "proj_default",
+  "building_type": "unknown",
+  "elements": [
+    {
+      "element_id": "wall_001",
+      "category": "Walls",
+      "family": "Basic Wall",
+      "type": "Generic - 200mm",
+      "level": "Level 1",
+      "geometry_features": {
+        "bounding_box": {
+          "min": [
+            0,
+            0,
+            0
+          ],
+          "max": [
+            5000,
+            3000,
+            200
+          ]
+        },
+        "location": {
+          "start": [
+            0,
+            0,
+            0
+          ],
+          "end": [
+            5000,
+            0,
+            0
+          ]
+        },
+        "volume": 3.0,
+        "area": 15.0
+      },
+      "parameters": {
+        "Length": 5.0,
+        "Unconnected Height": 3.0
+      }
+    },
+    {
+      "element_id": "door_001",
+      "category": "Doors",
+      "family": "Single-Flush",
+      "type": "900 x 2100mm",
+      "level": "Level 1",
+      "geometry_features": {
+        "bounding_box": null,
+        "location": [
+          2500,
+          0,
+          0
+        ],
+        "volume": 0.0,
+        "area": 0.0
+      },
+      "parameters": {
+        "Width": 0.9,
+        "Height": 2.1
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": "wall_001",
+      "target": "door_001",
+      "type": "HOSTS"
+    },
+    {
+      "source": "wall_001",
+      "target": "window_001",
+      "type": "HOSTS"
+    },
+    {
+      "source": "wall_001",
+      "target": "Level 1",
+      "type": "LOCATED_ON"
+    },
+    {
+      "source": "door_001",
+      "target": "Level 1",
+      "type": "LOCATED_ON"
+    }
+  ],
+  "source": "revit",
+  "version": "v1"
+}

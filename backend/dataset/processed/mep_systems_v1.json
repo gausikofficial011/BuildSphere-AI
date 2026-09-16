@@ -1,0 +1,77 @@
+{
+  "dataset_id": "mep_systems_v1",
+  "name": "MEP Systems & Building Services Dataset",
+  "discipline": "Mechanical, Electrical & Plumbing",
+  "portal_role": "MepEngineer",
+  "building_type": "Commercial Complex",
+  "description": "HVAC equipment, ductwork networks, water distribution, and electrical switchgear parameters.",
+  "version": "v1.0",
+  "source": "Revit MEP / Carrier HAP / ASHRAE 90.1",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "CHILLER_WTR_01",
+      "category": "Mechanical Equipment",
+      "family": "Water-Cooled Centrifugal Chiller",
+      "type": "500 TR VFD High Efficiency",
+      "level": "Basement Plant Room",
+      "discipline": "MEP",
+      "geometry_features": {
+        "volume": 12.5,
+        "area": 14.0,
+        "location": [15000, 8000, -4000]
+      },
+      "parameters": {
+        "Capacity_TR": 500,
+        "Refrigerant": "R-134a",
+        "IKW_per_TR": 0.54,
+        "ChilledWaterSupplyTemp": "6.7 C",
+        "FlowRate_GPM": 1200,
+        "PowerInput_kW": 270
+      }
+    },
+    {
+      "element_id": "DUCT_SUP_MAIN_01",
+      "category": "Ducts",
+      "family": "Rectangular Galvanized Duct",
+      "type": "1200x500mm Acoustic Lined",
+      "level": "Level 1",
+      "discipline": "MEP",
+      "geometry_features": {
+        "volume": 4.8,
+        "area": 24.0,
+        "location": { "start": [0, 2000, 3200], "end": [8000, 2000, 3200] }
+      },
+      "parameters": {
+        "Airflow_CFM": 6500,
+        "Velocity_FPM": 1100,
+        "StaticPressureDrop": "0.08 in.wg/100ft",
+        "InsulationThickness": "25mm Glasswool"
+      }
+    },
+    {
+      "element_id": "PANEL_MAIN_HT_01",
+      "category": "Electrical Equipment",
+      "family": "Main LT Panel",
+      "type": "415V 2500A 4P 50kA Form 4b",
+      "level": "Electrical Substation",
+      "discipline": "MEP",
+      "geometry_features": {
+        "volume": 3.6,
+        "area": 4.5,
+        "location": [22000, 5000, -4000]
+      },
+      "parameters": {
+        "Voltage": "415 V 3-Phase",
+        "RatedCurrent": "2500 A",
+        "BusbarMaterial": "Electrolytic Copper",
+        "FaultLevel": "50 kA for 1 sec"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "CHILLER_WTR_01", "target": "DUCT_SUP_MAIN_01", "type": "FEEDS_COOLING" },
+    { "source": "PANEL_MAIN_HT_01", "target": "CHILLER_WTR_01", "type": "POWERS" }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "dataset_id": "construction_schedule_v1",
+  "name": "4D BIM & Construction Schedule Dataset",
+  "discipline": "Planning & Project Controls",
+  "portal_role": "PlanningEngineer",
+  "building_type": "Infrastructure & High-Rise",
+  "description": "CPM master schedule activities, WBS taxonomy, critical path floats, baseline dates, and earned value metrics.",
+  "version": "v1.3",
+  "source": "Primavera P6 / MS Project Sync",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "ACT_WBS_101",
+      "category": "Schedule Activity",
+      "family": "Substructure Works",
+      "type": "Foundation Excavation & Raft Concreting",
+      "level": "Basement 2",
+      "discipline": "Planning",
+      "geometry_features": null,
+      "parameters": {
+        "WBS_Code": "1.02.04",
+        "PlannedStartDate": "2024-01-15",
+        "PlannedFinishDate": "2024-03-30",
+        "ActualStartDate": "2024-01-15",
+        "ActualFinishDate": "2024-03-24",
+        "PercentComplete": 100.0,
+        "TotalFloat_Days": 0,
+        "IsCriticalPath": true,
+        "Status": "COMPLETED"
+      }
+    },
+    {
+      "element_id": "ACT_WBS_204",
+      "category": "Schedule Activity",
+      "family": "Superstructure Works",
+      "type": "Level 1 to 5 Concrete Frame Casting",
+      "level": "Levels 1-5",
+      "discipline": "Planning",
+      "geometry_features": null,
+      "parameters": {
+        "WBS_Code": "2.01.08",
+        "PlannedStartDate": "2024-04-01",
+        "PlannedFinishDate": "2024-08-15",
+        "ActualStartDate": "2024-03-28",
+        "PercentComplete": 92.5,
+        "TotalFloat_Days": 4,
+        "IsCriticalPath": false,
+        "Status": "IN_PROGRESS"
+      }
+    },
+    {
+      "element_id": "ACT_WBS_301",
+      "category": "Schedule Activity",
+      "family": "Facade & Cladding",
+      "type": "Unitized Curtain Glazing Installation",
+      "level": "Levels 1-12",
+      "discipline": "Planning",
+      "geometry_features": null,
+      "parameters": {
+        "WBS_Code": "3.04.01",
+        "PlannedStartDate": "2024-06-01",
+        "PlannedFinishDate": "2024-11-30",
+        "PercentComplete": 42.0,
+        "TotalFloat_Days": 2,
+        "IsCriticalPath": true,
+        "Status": "IN_PROGRESS"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "ACT_WBS_101", "target": "ACT_WBS_204", "type": "FINISH_TO_START" },
+    { "source": "ACT_WBS_204", "target": "ACT_WBS_301", "type": "START_TO_START_LAG_30D" }
+  ]
+}

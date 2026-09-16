@@ -1,0 +1,67 @@
+{
+  "dataset_id": "qaqc_inspection_safety_v1",
+  "name": "QA/QC Inspection & Safety Compliance Dataset",
+  "discipline": "Quality & Safety Compliance",
+  "portal_role": "InspectorDashboard",
+  "building_type": "Quality & HSE Audit Ledger",
+  "description": "Work Inspection Requests (WIR), concrete cube compressive strength tests, crack widths, and PPE safety logs.",
+  "version": "v1.1",
+  "source": "Site Mobile Audit Engine / NDT Sensor Rig",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "TEST_CUBE_M40_28D",
+      "category": "Quality Inspection",
+      "family": "Concrete Compressive Strength",
+      "type": "150mm Cube Test (IS 516)",
+      "level": "Level 1 Slab Pour #3",
+      "discipline": "QA/QC",
+      "geometry_features": null,
+      "parameters": {
+        "SampleID": "CUBE-2024-401",
+        "Age_Days": 28,
+        "TargetStrength_MPa": 40.0,
+        "ActualStrength_MPa": 46.2,
+        "PassStatus": "PASS (115.5% Target)",
+        "TestingLab": "NABL Accredited Third-Party Lab"
+      }
+    },
+    {
+      "element_id": "WIR_REBAR_FL2_GRID_C",
+      "category": "Work Inspection Request",
+      "family": "Structural Rebar Check",
+      "type": "Pre-Pour Inspection Checklist",
+      "level": "Level 2 Columns",
+      "discipline": "QA/QC",
+      "geometry_features": null,
+      "parameters": {
+        "WIR_Number": "WIR-STR-2024-092",
+        "CoverVerification": "40mm Verified via Covermeter",
+        "LapLength": "50d Staggered",
+        "ChairsAndSpacers": "100% Compliant",
+        "SignoffStatus": "CODE_A_APPROVED_FOR_CONCRETING"
+      }
+    },
+    {
+      "element_id": "SAFETY_PPE_ZONE_4",
+      "category": "HSE Safety Audit",
+      "family": "AI Video Analytics Scan",
+      "type": "Real-Time Camera Stream Stream-04",
+      "level": "Level 3 Working Edge",
+      "discipline": "Safety",
+      "geometry_features": null,
+      "parameters": {
+        "WorkersDetected": 24,
+        "HelmetsPresent": 24,
+        "SafetyHarnessAnchored": "100%",
+        "EdgeProtectionNetting": "VERIFIED",
+        "ViolationCount": 0,
+        "SafetyScore": "100/100"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "WIR_REBAR_FL2_GRID_C", "target": "COL_STR_C1", "type": "INSPECTS_ELEMENT" }
+  ]
+}

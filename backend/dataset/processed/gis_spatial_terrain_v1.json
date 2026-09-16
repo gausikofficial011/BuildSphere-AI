@@ -1,0 +1,61 @@
+{
+  "dataset_id": "gis_spatial_terrain_v1",
+  "name": "GIS Spatial Topography & Terrain Dataset",
+  "discipline": "GIS & Spatial Intelligence",
+  "portal_role": "GisEngineer",
+  "building_type": "Site & Campus Infrastructure",
+  "description": "Georeferenced site polygons, Digital Elevation Models (DEM), cut/fill volumes, and underground utility buffers.",
+  "version": "v1.0",
+  "source": "Drone LiDAR Survey / WGS 84 UTM Zone 43N",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "GIS_POLY_PLOT_A",
+      "category": "Cadastral Boundary",
+      "family": "Site Polygon",
+      "type": "Commercial Land Parcel",
+      "level": "Ground Level",
+      "discipline": "GIS",
+      "geometry_features": {
+        "volume": 0.0,
+        "area": 42500.0,
+        "location": {
+          "latitude": 19.0760,
+          "longitude": 72.8777,
+          "elevation_m": 14.5
+        }
+      },
+      "parameters": {
+        "PlotArea_sqm": 42500.0,
+        "FAR_Permissible": 3.5,
+        "MaxGroundCoverage": "40%",
+        "FrontSetback_m": 12.0,
+        "SideSetbacks_m": 7.5,
+        "ZoneClassification": "Commercial High-Density"
+      }
+    },
+    {
+      "element_id": "GIS_EARTH_CUT_FILL",
+      "category": "Topography Grading",
+      "family": "Terrain Surface",
+      "type": "TIN Elevation Mesh",
+      "level": "Subgrade",
+      "discipline": "GIS",
+      "geometry_features": {
+        "volume": 18500.0,
+        "area": 28000.0,
+        "location": null
+      },
+      "parameters": {
+        "CutVolume_cum": 18500.0,
+        "FillVolume_cum": 17950.0,
+        "NetBalance_cum": "+550 (Near Zero Import)",
+        "SlopeGradient": "1:100 Drainage Pitch"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "GIS_POLY_PLOT_A", "target": "GIS_EARTH_CUT_FILL", "type": "CONTAINS_TERRAIN" }
+  ]
+}

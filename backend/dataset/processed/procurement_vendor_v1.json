@@ -1,0 +1,52 @@
+{
+  "dataset_id": "procurement_vendor_v1",
+  "name": "Procurement & Vendor Supply Chain Dataset",
+  "discipline": "Procurement & Supply Chain",
+  "portal_role": "ProcurementManager",
+  "building_type": "Supply Chain Master Ledger",
+  "description": "Purchase orders, material batches, supplier lead times, delivery manifests, and mill test certificates.",
+  "version": "v1.2",
+  "source": "SAP ERP / Oracle SCM Integration",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "PO_REBAR_BATCH_04",
+      "category": "Material Order",
+      "family": "TMT Steel Supply",
+      "type": "Tata Tiscon 550D Fe Rebar",
+      "level": "Site Stockyard",
+      "discipline": "Procurement",
+      "geometry_features": null,
+      "parameters": {
+        "PONumber": "PO-2024-9120",
+        "Supplier": "Tata Steel Industrial Ltd",
+        "OrderedQty_MT": 120.0,
+        "DeliveredQty_MT": 85.0,
+        "LeadTime_Days": 5,
+        "MTC_Verified": "YES (Tensile 610 MPa)",
+        "DeliveryStatus": "IN_TRANSIT"
+      }
+    },
+    {
+      "element_id": "PO_CEMENT_BULK_02",
+      "category": "Material Order",
+      "family": "OPC 53 Grade Cement",
+      "type": "Bulk Tanker Supply",
+      "level": "RMC Batching Plant",
+      "discipline": "Procurement",
+      "geometry_features": null,
+      "parameters": {
+        "PONumber": "PO-2024-8840",
+        "Supplier": "UltraTech Cement Corp",
+        "OrderedQty_MT": 300.0,
+        "DeliveredQty_MT": 300.0,
+        "DeliveryStatus": "DELIVERED",
+        "QualityTestScore": "99.4%"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "PO_REBAR_BATCH_04", "target": "BOQ_ITEM_03_02", "type": "FULFILLS_BOQ" }
+  ]
+}

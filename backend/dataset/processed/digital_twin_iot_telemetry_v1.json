@@ -1,0 +1,82 @@
+{
+  "dataset_id": "digital_twin_iot_telemetry_v1",
+  "name": "Digital Twin & Industrial IoT Telemetry Dataset",
+  "discipline": "Digital Twin & IoT",
+  "portal_role": "DigitalTwinEngineer",
+  "building_type": "Smart Connected Asset",
+  "description": "Real-time edge sensor nodes, vibration spectra, thermal telemetry, and energy sub-metering streams.",
+  "version": "v2.0",
+  "source": "LoRaWAN Gateway / MQTT Telemetry Broker",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "IOT_NODE_VIB_CH1",
+      "category": "IoT Sensors",
+      "family": "Triaxial Vibration & Temp Sensor",
+      "type": "LoRaWAN 868MHz Edge Gateway",
+      "level": "Basement Plant Room",
+      "discipline": "IoT",
+      "geometry_features": {
+        "volume": 0.001,
+        "area": 0.02,
+        "location": [15100, 8050, -3500]
+      },
+      "parameters": {
+        "SensorID": "SN-VIB-8821",
+        "RMS_Velocity_mm_s": 0.82,
+        "Bearing_Temp_C": 48.6,
+        "Peak_Acceleration_g": 0.45,
+        "SamplingRate": "1000 Hz",
+        "BatteryLevel": "94%",
+        "HealthStatus": "OPTIMAL"
+      }
+    },
+    {
+      "element_id": "IOT_METER_PWR_MAIN",
+      "category": "IoT Meters",
+      "family": "Smart Energy Power Meter",
+      "type": "Modbus RS485 Class 0.2s",
+      "level": "Electrical Substation",
+      "discipline": "IoT",
+      "geometry_features": {
+        "volume": 0.005,
+        "area": 0.04,
+        "location": [22050, 5020, -3800]
+      },
+      "parameters": {
+        "ActivePower_kW": 412.5,
+        "PowerFactor": 0.98,
+        "Frequency_Hz": 50.02,
+        "DailyEnergy_kWh": 5840.0,
+        "CarbonEmission_kgCO2e": 4788.8,
+        "PeakDemand_kVA": 450.0
+      }
+    },
+    {
+      "element_id": "IOT_IAQ_FL1_ZONE_A",
+      "category": "IoT Environmental",
+      "family": "Indoor Air Quality Multi-Sensor",
+      "type": "BACnet IP IAQ Monitor",
+      "level": "Level 1 Open Office",
+      "discipline": "IoT",
+      "geometry_features": {
+        "volume": 0.002,
+        "area": 0.03,
+        "location": [4500, 3000, 2400]
+      },
+      "parameters": {
+        "CO2_ppm": 540,
+        "PM2_5_ug_m3": 12.4,
+        "VOC_ppb": 85,
+        "AmbientTemp_C": 23.2,
+        "RelativeHumidity_pct": 52.0,
+        "ASHRAE_Compliance": "PASS"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "IOT_NODE_VIB_CH1", "target": "CHILLER_WTR_01", "type": "MONITORS_ASSET" },
+    { "source": "IOT_METER_PWR_MAIN", "target": "PANEL_MAIN_HT_01", "type": "MONITORS_LOAD" }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "dataset_id": "facility_asset_management_v1",
+  "name": "Facility Management & Asset Lifecycle Dataset",
+  "discipline": "Facility Management & Operations",
+  "portal_role": "ClientDashboard",
+  "building_type": "Operated Facility",
+  "description": "COBie equipment taxonomy, asset warranties, scheduled preventive maintenance, and condition indices.",
+  "version": "v1.0",
+  "source": "COBie 2.4 Spreadsheet / Maximo CMMS",
+  "created_at": "2026-08-20T08:00:00Z",
+  "updated_at": "2026-08-20T08:00:00Z",
+  "elements": [
+    {
+      "element_id": "ASSET_ELEV_01",
+      "category": "Vertical Transportation",
+      "family": "Passenger Elevator",
+      "type": "24 Passenger High-Speed Gearless 3.5 m/s",
+      "level": "Core Bank A",
+      "discipline": "Facility",
+      "geometry_features": null,
+      "parameters": {
+        "Manufacturer": "Schindler Elevators",
+        "SerialNo": "SCH-2024-8819",
+        "CommissionDate": "2024-05-10",
+        "WarrantyExpiry": "2029-05-10",
+        "ConditionScore": "98/100",
+        "NextInspectionDue": "2026-11-15",
+        "OperatingHours": 4200
+      }
+    },
+    {
+      "element_id": "ASSET_DG_SET_01",
+      "category": "Emergency Power",
+      "family": "Diesel Generator Set",
+      "type": "1500 kVA Silent Acoustic Canopy",
+      "level": "Ground Utility Yard",
+      "discipline": "Facility",
+      "geometry_features": null,
+      "parameters": {
+        "Manufacturer": "Cummins Power",
+        "Capacity_kVA": 1500,
+        "FuelTankCapacity_L": 2500,
+        "BatteryVoltage_V": 24.8,
+        "AutoTransferSwitch_Status": "READY_AUTO",
+        "LastRunTest": "2026-08-15 (Passed)"
+      }
+    }
+  ],
+  "relationships": [
+    { "source": "ASSET_DG_SET_01", "target": "PANEL_MAIN_HT_01", "type": "BACKUP_POWER_FOR" }
+  ]
+}
